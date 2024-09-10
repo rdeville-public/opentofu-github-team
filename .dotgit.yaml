@@ -70,4 +70,4 @@ extra:
           alt: "@rdeville"
           url: https://framagit.org/rdeville
   repo:
-    url: https://framagit.org/rdeville-public/terraform/module-github-groups
+    url: https://framagit.org/rdeville-public/terraform/module-github-teams
