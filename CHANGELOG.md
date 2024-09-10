@@ -1,12 +1,27 @@
 <!-- markdownlint-disable-file -->
 # CHANGELOG
 
+## v0.2.2 (2024-09-10)
+
+### 🩹 Patch
+
+  * 🔧 Update DGS configuration and apply it (!4) by Romain Deville ([`1179e9a`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/1179e9a031ec5368163324fb350b91c65b273972))
+  * 🔧 Update dotgit-sync configuration by Romain Deville ([`1d2c72b`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/1d2c72b253e870e1cf16d962efe607f02ca2ed4c)) 🔏
+
+### 🔊 Others
+
+  * 📝 Update README after dotgit sync update by Romain Deville ([`be69aed`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/be69aed9e303b8fd08888e33b5f3b964a43ffa13)) 🔏
+
 ## v0.2.1 (2024-09-10)
 
 ### 🩹 Patch
 
   * ⚡️ Ensuire team are either members xor maintainers (!3) by Romain Deville ([`ef385f2`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/ef385f23e80e723ef633f08dd785419ae577186d))
   * ⚡️ Ensuire team are either members xor maintainers by Romain Deville ([`52fcdcd`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/52fcdcd4f66fa5ae9fb7b0c29efcdf2f1026f179)) 🔏
+
+### 🔊 Others
+
+  * 🔖 v0.2.1 (NO-CI) by Python Semantic Release [bot] ([`2ff54ad`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/2ff54ada102e50547daad3cf72aff52e4b1a3bd1))
 
 ## v0.2.0 (2024-09-10)
 
@@ -34,13 +49,11 @@
   * 🔧 Add commitlint config from DGS template by Romain Deville ([`d286fca`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/d286fcacc447fec7b981aa8b10c0db6f3b06b2c7)) 🔏
   * 🔧 Add cspell configuration from DGS template by Romain Deville ([`6ceb4f6`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/6ceb4f645ca089725d594474d05187ccbfdfc77e)) 🔏
   * 🔧 Add editorconfig from DGS template by Romain Deville ([`bb4b561`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/bb4b5612e51c650850df8680a2de55a4c0201d03)) 🔏
-  * 🔧 Add dotgit sync configuration by Romain Deville ([`60db4a7`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/60db4a70bcb6eb341dc40394ba8c1950daf9a448)) 🔏
 
 ### 🔊 Others
 
   * 🎉 Initialization of the repos from DGS and add provider constraint (!1) by Romain Deville ([`d57892f`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/d57892fc51a79e557874ea4933dd5a429028b371))
   * 👷 Add Gitlab CI from DGS template by Romain Deville ([`630d41a`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/630d41ac729c9c752caab69f7f18684e26095c1b)) 🔏
-  * 📄 Update licenses from DGS by Romain Deville ([`0fcfa4a`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/0fcfa4a507dcb37f05caa59271e8e5eb2943d081)) 🔏
   * 📝 Add CODE_OF_CONDUCT from DGS by Romain Deville ([`2ab7b34`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/2ab7b34ae52579afa72e5c99653879ba7776704e)) 🔏
   * 📝 Update README from DGS by Romain Deville ([`7843977`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/7843977b16bcb80adbee9bf6b630c4458d316c2c)) 🔏
   * 🔖 v0.1.0 (NO-CI) by Python Semantic Release [bot] ([`afd831e`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/afd831ed741935ca85424436a7b9164120575a8e))
