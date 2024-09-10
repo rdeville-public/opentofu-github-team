@@ -1,0 +1,72 @@
+# BEGIN DOTGIT-SYNC BLOCK MANAGED YAML_MERGED
+Check dotgit-sync Update:
+  image: alpine:latest
+  stage: pre-ci
+  variables:
+    DOTGIT_BRANCH: chore/dotgit-sync-template-update
+    GIT_USER_NAME: Dotgit Sync [bot]
+    GIT_USER_EMAIL: code+bot.dotgit-sync@romaindeville.fr
+    COMMIT_MESSAGE: "\u2B06\uFE0F Update templated files from dotgit-sync"
+    GITLAB_HOST: ${CI_SERVER_HOST}
+  before_script:
+  - apk add --update --no-cache git python3 py3-pip glab
+  - git config --global user.email "${GIT_USER_EMAIL}"
+  - git config --global user.name "${GIT_USER_NAME}"
+  - python3 -m venv .env
+  - source .env/bin/activate
+  - pip3 install git+https://framagit.org/rdeville-public/programs/dotgit-sync
+  script:
+  - git fetch --all
+  - git checkout "${CI_DEFAULT_BRANCH}"
+  - git pull origin "${CI_DEFAULT_BRANCH}"
+  - |-
+    # Check if dotgit-sync branch already exists, if so, make it up-to-date
+    # with main branch
+    if git branch --list | grep "${DOTGIT_BRANCH}"
+    then
+      git checkout "${DOTGIT_BRANCH}"
+      git rebase "${CI_DEFAULT_BRANCH}"
+    else
+      git checkout -b "${DOTGIT_BRANCH}"
+    fi
+  - dotgit-sync
+  - git status
+  - |-
+    if ! git diff --quiet
+    then
+      export DOTGIT_UPGRADE=true
+    fi
+  - |-
+    if [[ -n "${DOTGIT_UPGRADE}" ]]
+    then
+      git add .
+      git commit -m "${COMMIT_MESSAGE}"
+    fi
+  - git remote set-url origin "https://gitlab-ci-token:${DOTGIT_SYNC_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}"
+  - |-
+    if [[ -n "${DOTGIT_UPGRADE}" ]] && ! glab mr list | grep -q "${COMMIT_MESSAGE}"
+    then
+      # If new upgrade push with MR creation
+      # WARNING: DANGEROUS, BE SURE TO PROTECT DEFAULT BRANCHES
+      git push \
+        --force \
+        -o merge_request.create \
+        -o merge_request.label=ci \
+        -o merge_request.label=enhancement \
+        -o merge_request.title="${COMMIT_MESSAGE}" \
+        --set-upstream origin \
+        "${DOTGIT_BRANCH}"
+    elif glab mr list | grep -q "${COMMIT_MESSAGE}"
+    then
+      # If ugprade push to make up to date
+      # In any case, make sure remote branch is up-to-date
+      # WARNING: DANGEROUS, BE SURE TO PROTECT DEFAULT BRANCHES
+      git push \
+        --force \
+        --set-upstream origin \
+        "${DOTGIT_BRANCH}"
+    fi
+  rules:
+  - if: $CI_PIPELINE_SOURCE =~ /(parent_pipeline|pipeline)/
+  - when: never
+# END DOTGIT-SYNC BLOCK MANAGED YAML_MERGED
