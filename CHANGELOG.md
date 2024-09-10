@@ -1,6 +1,13 @@
 <!-- markdownlint-disable-file -->
 # CHANGELOG
 
+## v0.2.1 (2024-09-10)
+
+### 🩹 Patch
+
+  * ⚡️ Ensuire team are either members xor maintainers (!3) by Romain Deville ([`ef385f2`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/ef385f23e80e723ef633f08dd785419ae577186d))
+  * ⚡️ Ensuire team are either members xor maintainers by Romain Deville ([`52fcdcd`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/52fcdcd4f66fa5ae9fb7b0c29efcdf2f1026f179)) 🔏
+
 ## v0.2.0 (2024-09-10)
 
 ### ✨ Minor
@@ -11,6 +18,7 @@
 ### 🔊 Others
 
   * 📝 Update README from tf-docs and examples by Romain Deville ([`66f2852`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/66f285262ecc3a1a86b73e03a2ba585cfaa2e1f0))
+  * 🔖 v0.2.0 (NO-CI) by Python Semantic Release [bot] ([`8fe4c3f`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/8fe4c3f2fee103255171dff3339815e73361b03f))
 
 ## v0.1.0 (2024-09-10)
 
