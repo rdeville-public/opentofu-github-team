@@ -11,7 +11,7 @@ resource "github_team_members" "this" {
   team_id = github_team.this.id
 
   dynamic "members" {
-    for_each = var.members
+    for_each = local.members
 
     content {
       username = members.key
