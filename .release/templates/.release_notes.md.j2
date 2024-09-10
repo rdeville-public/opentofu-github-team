@@ -1,0 +1,14 @@
+{#- BEGIN DOTGIT-SYNC BLOCK MANAGED -#}
+## What's Changed
+{%- set ns = namespace(
+  content={
+    "major" : {"title": "💥", "commits": []},
+    "minor": {"title": "✨", "commits": []},
+    "patch": {"title": "🩹", "commits": []},
+    "others": {"title": "🔊", "commits": []}
+  })
+%}
+{% import ".changelog.macros.j2" as fn with context %}
+{{- fn.recompute_commit(release["elements"]) | replace("None","") }}
+{{- fn.print_release() }}
+{#- END DOTGIT-SYNC BLOCK MANAGED -#}

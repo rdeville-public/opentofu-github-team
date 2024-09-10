@@ -1,0 +1,43 @@
+{#- BEGIN DOTGIT-SYNC BLOCK MANAGED -#}
+{%- macro reset_namespace() %}
+{%- set ns.content={
+    "major" : {"title": "💥", "commits": []},
+    "minor": {"title": "✨", "commits": []},
+    "patch": {"title": "🩹", "commits": []},
+    "others": {"title": "🔊", "commits": []}
+  }
+%}
+{%- endmacro %}
+
+{%- macro print_release() %}
+{%- for key in ns.content  %}
+  {%- if ns.content[key].commits | length > 0 %}
+
+### {{ ns.content[key].title | title }} {{ key | title }}
+{{ print_commits(ns.content[key].commits) -}}
+  {%- endif %}
+{%- endfor %}
+{%- endmacro %}
+
+{%- macro recompute_commit(context_history) %}
+{%- for _, commits in context_history | dictsort %}
+  {%- for commit in commits %}
+    {%- if commit.bump | string == "no_release" %}
+      {{- ns.content.others.commits.append(commit) }}
+    {%- elif commit.bump | string in ["major", "minor", "patch"]  %}
+      {{- ns.content[commit.bump | string].commits.append(commit) }}
+    {%- endif %}
+  {%- endfor %}
+{%- endfor %}
+{%- endmacro -%}
+
+{%- macro print_commits(commits) %}
+{%- for commit in commits | sort(attribute='commit.author_datetime', reverse=True) %}
+  {{- print_commit(commit) }}
+{%- endfor %}
+{%- endmacro %}
+
+{%- macro print_commit(commit) %}
+  * {{ commit.descriptions[0] }} by {{ commit.commit.author.name }} ([`{{ commit.commit.hexsha[:7] }}`]({{ commit.commit.hexsha | commit_hash_url }})){% if commit.commit.gpgsig %} 🔏{% endif -%}
+{%- endmacro %}
+{#- END DOTGIT-SYNC BLOCK MANAGED -#}
