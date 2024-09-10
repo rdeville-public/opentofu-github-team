@@ -1,6 +1,17 @@
 <!-- markdownlint-disable-file -->
 # CHANGELOG
 
+## v0.2.0 (2024-09-10)
+
+### ✨ Minor
+
+  * ✨ Add most of teams related resources (!2) by Romain Deville ([`df41e6e`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/df41e6e2f20b23ec1dad0d948f4ae8679027d5ec))
+  * ✨ Add most of team related resources by Romain Deville ([`2f83b6f`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/2f83b6f7ce6806df01059de99c20d1f9a639dd49))
+
+### 🔊 Others
+
+  * 📝 Update README from tf-docs and examples by Romain Deville ([`66f2852`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/66f285262ecc3a1a86b73e03a2ba585cfaa2e1f0))
+
 ## v0.1.0 (2024-09-10)
 
 ### ✨ Minor
@@ -24,6 +35,7 @@
   * 📄 Update licenses from DGS by Romain Deville ([`0fcfa4a`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/0fcfa4a507dcb37f05caa59271e8e5eb2943d081)) 🔏
   * 📝 Add CODE_OF_CONDUCT from DGS by Romain Deville ([`2ab7b34`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/2ab7b34ae52579afa72e5c99653879ba7776704e)) 🔏
   * 📝 Update README from DGS by Romain Deville ([`7843977`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/7843977b16bcb80adbee9bf6b630c4458d316c2c)) 🔏
+  * 🔖 v0.1.0 (NO-CI) by Python Semantic Release [bot] ([`afd831e`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/afd831ed741935ca85424436a7b9164120575a8e))
   * 🔨 Add devbox config from DGS template by Romain Deville ([`624e12b`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/624e12b603d1acc1b8551d89c12368283708f4a3)) 🔏
   * 🔨 Add pre-commit configuration from DGS template by Romain Deville ([`905826b`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/905826bc44d59be20032dd180a0f05f26f698f5e)) 🔏
   * 🙈 Update gitignore from DGS by Romain Deville ([`1178370`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/1178370246f197b13ba41289cc108ef8dfb20bf9)) 🔏
