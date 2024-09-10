@@ -1,0 +1,213 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "opentofu@1.8.1": {
+      "last_modified": "2024-08-31T10:12:23Z",
+      "resolved": "github:NixOS/nixpkgs/5629520edecb69630a3f4d17d3d33fc96c13f6fe#opentofu",
+      "source": "devbox-search",
+      "version": "1.8.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/g6naxa0yay3yn4nw5bwxi5v6yrayps1q-opentofu-1.8.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/g6naxa0yay3yn4nw5bwxi5v6yrayps1q-opentofu-1.8.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/q6ffh8416ar9nv5s9nvc34w8ac772wq0-opentofu-1.8.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/q6ffh8416ar9nv5s9nvc34w8ac772wq0-opentofu-1.8.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/fkg68vhffwprqahnglixi3rwcp50m4b9-opentofu-1.8.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/fkg68vhffwprqahnglixi3rwcp50m4b9-opentofu-1.8.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/p1ph05ah0a055i9vjidy593a8kg0pwil-opentofu-1.8.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/p1ph05ah0a055i9vjidy593a8kg0pwil-opentofu-1.8.1"
+        }
+      }
+    },
+    "pre-commit@3.7.1": {
+      "last_modified": "2024-08-31T10:12:23Z",
+      "resolved": "github:NixOS/nixpkgs/5629520edecb69630a3f4d17d3d33fc96c13f6fe#pre-commit",
+      "source": "devbox-search",
+      "version": "3.7.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/5g55f7d31vlac7c93chh86vqr3c5c3ri-pre-commit-3.7.1",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/qy583afkz2dpkm002bwifhgd8x4858hj-pre-commit-3.7.1-dist"
+            }
+          ],
+          "store_path": "/nix/store/5g55f7d31vlac7c93chh86vqr3c5c3ri-pre-commit-3.7.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/b1v22x5qiwrw9pvkcz5wn5wimgpwa33i-pre-commit-3.7.1",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/x0gcrvjnj27alqh4ac1x3gkz71r5pjh3-pre-commit-3.7.1-dist"
+            }
+          ],
+          "store_path": "/nix/store/b1v22x5qiwrw9pvkcz5wn5wimgpwa33i-pre-commit-3.7.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/1zic7nfa8cc952516r5aspsisp09bls8-pre-commit-3.7.1",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/jx0vz9353fi7k5nsmx1hbzbx45v4w1ag-pre-commit-3.7.1-dist"
+            }
+          ],
+          "store_path": "/nix/store/1zic7nfa8cc952516r5aspsisp09bls8-pre-commit-3.7.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/iqh91d6ca4vmf7xkdjf1bm19vx951d6x-pre-commit-3.7.1",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/ayz1q36zrplb8qnl41swbcz4ni0f5jb4-pre-commit-3.7.1-dist"
+            }
+          ],
+          "store_path": "/nix/store/iqh91d6ca4vmf7xkdjf1bm19vx951d6x-pre-commit-3.7.1"
+        }
+      }
+    },
+    "terraform-docs@0.18.0": {
+      "last_modified": "2024-08-31T10:12:23Z",
+      "resolved": "github:NixOS/nixpkgs/5629520edecb69630a3f4d17d3d33fc96c13f6fe#terraform-docs",
+      "source": "devbox-search",
+      "version": "0.18.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/8vmfv7hiahn0qg08wjszqsvbpz18cv4s-terraform-docs-0.18.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/8vmfv7hiahn0qg08wjszqsvbpz18cv4s-terraform-docs-0.18.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/lg75baf7ikd35ri4gsq27wgn5qc441fw-terraform-docs-0.18.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/lg75baf7ikd35ri4gsq27wgn5qc441fw-terraform-docs-0.18.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/wz057y8cyn2xcxf8i2nf8fj8bkdlpq6s-terraform-docs-0.18.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/wz057y8cyn2xcxf8i2nf8fj8bkdlpq6s-terraform-docs-0.18.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/gjh6m8kmbqkmpznll0x3vjcihif74xsx-terraform-docs-0.18.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/gjh6m8kmbqkmpznll0x3vjcihif74xsx-terraform-docs-0.18.0"
+        }
+      }
+    },
+    "yq-go@4.44.1": {
+      "last_modified": "2024-06-12T20:55:33Z",
+      "resolved": "github:NixOS/nixpkgs/a9858885e197f984d92d7fe64e9fff6b2e488d40#yq-go",
+      "source": "devbox-search",
+      "version": "4.44.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/c680a8924hfl6kilfmm7wdi17x816lf9-yq-go-4.44.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/c680a8924hfl6kilfmm7wdi17x816lf9-yq-go-4.44.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/v0fdhzjlivcbxys68cv61bk1i3arm6yf-yq-go-4.44.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/v0fdhzjlivcbxys68cv61bk1i3arm6yf-yq-go-4.44.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/inlcz0pxlnqi8xwd1lxi0kf0d1dgr5s9-yq-go-4.44.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/inlcz0pxlnqi8xwd1lxi0kf0d1dgr5s9-yq-go-4.44.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/kcihngcm9wjddhx6hlvqchj927698df2-yq-go-4.44.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/kcihngcm9wjddhx6hlvqchj927698df2-yq-go-4.44.1"
+        }
+      }
+    }
+  }
+}
