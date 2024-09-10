@@ -1,0 +1,267 @@
+# BEGIN DOTGIT-SYNC BLOCK MANAGED
+formatter: "markdown"
+
+version: ">= 0.18.0, < 1.0.0"
+
+content: |-
+  ## ⚙️ Module Content
+
+  <details><summary>Click to reveal</summary>
+
+  ### Table of Content
+  {{ if .Module.HasRequirements }}
+  * [Requirements](#requirements)
+  {{- end }}
+  {{- if .Module.HasResources }}
+    {{- range .Module.Resources }}
+      {{- if eq .GetMode "data source" }}
+      {{- break }}
+  * [Data Sources](#data-sources)
+      {{- end }}
+    {{- end }}
+    {{- range .Module.Resources }}
+      {{- if eq .GetMode "resource" }}
+  * [Resources](#resources)
+      {{- break }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+  {{- if .Module.HasModuleCalls }}
+  * [Modules](#modules)
+  {{- end }}
+  {{- if and .Module.HasInputs .Module.RequiredInputs .Module.OptionalInputs }}
+  * [Inputs](#inputs)
+  {{- end }}
+  {{- if and .Module.HasInputs .Module.RequiredInputs }}
+    * [Required Inputs](#required-inputs)
+  {{- else if and .Module.RequiredInputs }}
+  * [Required Inputs](#required-inputs)
+  {{- end }}
+  {{- if and .Module.HasInputs .Module.OptionalInputs }}
+    * [Optional Inputs](#optional-inputs)
+  {{- else if .Module.OptionalInputs }}
+  * [Optional Inputs](#optional-inputs)
+  {{- end }}
+  {{- if .Module.HasOutputs }}
+  * [Outputs](#outputs)
+  {{- end }}
+  {{- if .Module.HasRequirements }}
+
+  ### Requirements
+  {{ range .Module.Requirements }}
+  {{- if eq .Name "terraform" }}
+  * [opentofu](https://opentofu.org/docs/):
+  {{- else }}
+  {{- $providerSource := "" }}
+  {{- $providerName := .Name }}
+  {{- range $.Module.Resources }}
+  {{- if and (eq $providerSource "") (eq .ProviderName $providerName) }}
+  {{- $providerSource = .ProviderSource }}
+  {{- end }}
+  {{- end }}
+  * [{{ .Name }}](https://registry.terraform.io/providers/{{ $providerSource }}/):
+  {{- end }}
+    `{{ .Version }}`
+  {{- end }}
+  {{- end }}
+  {{- if .Module.HasResources }}
+  {{- range .Module.Resources }}
+  {{- if eq .GetMode "data source" }}
+
+  ### Data Sources
+  {{ break }}
+  {{- end }}
+  {{- end }}
+  {{- range .Module.Resources }}
+  {{- if eq .GetMode "data source" }}
+  * [data.{{ .Spec }}]({{ .URL }})
+  {{- if .Description }}
+    > {{ .Description }}
+  {{- else }}
+    >
+  {{- end }}
+  {{- end }}
+  {{- end }}
+  {{ range .Module.Resources }}
+  {{- if eq .GetMode "resource" }}
+  ### Resources
+  {{ break }}
+  {{- end }}
+  {{- end }}
+  {{- range .Module.Resources }}
+  {{- if eq .GetMode "resource" }}
+  * [{{ .GetMode }}.{{ .Spec }}]({{ .URL }})
+  {{- if .Description }}
+    > {{ .Description }}
+  {{- else }}
+    >
+  {{- end }}
+  {{- end }}
+  {{- end }}
+  {{- end }}
+  {{- if .Module.HasModuleCalls }}
+
+  ### Modules
+  {{ range .Module.ModuleCalls }}
+  {{- $source := .Source }}
+  {{- if .Version }}
+  {{- if regexMatch "^[a-zA-Z0-9_-.]+.[a-z]" .Source }}
+  {{- $source = print "https://" .Source }}
+  {{- else }}
+  {{- $source = print "https://registry.terraform.io/modules/" .Source }}
+  {{- end }}
+  {{- else }}
+  {{- if regexMatch ".*@.*/" .Source }}
+  {{- $source = regexReplaceAll ".*@" (regexReplaceAll ":" .Source "/") "https://" }}
+  {{- else if  regexMatch "[a-zA-Z0-9_-]*.[a-zA-Z0-9_]" .Source }}
+  {{- $source = regexReplaceAll ".*://" .Source "https://" }}
+  {{- end }}
+  {{- end }}
+  * [{{ .Name }}]({{ $source }}){{- if .Version }}: `{{ .Version }}`{{- end }}
+  {{- if .Description }}
+    > {{ .Description }}
+  {{- else }}
+    >
+  {{- end }}
+  {{- end }}
+  {{- end }}
+  {{- if or .Module.RequiredInputs .Module.OptionalInputs }}
+
+  <!-- markdownlint-capture -->
+  {{- end }}
+  {{- if and .Module.RequiredInputs .Module.OptionalInputs }}
+  ### Inputs
+  {{- end }}
+  {{- if and .Module.RequiredInputs .Module.OptionalInputs }}
+
+  <!-- markdownlint-disable -->
+  #### Required Inputs
+  {{- else if .Module.RequiredInputs }}
+  <!-- markdownlint-disable -->
+  ### Required Inputs
+  {{- end }}
+  {{- if .Module.RequiredInputs }}
+  {{ range .Module.RequiredInputs }}
+  * [{{ .Name }}](#{{ .Name }})
+  {{- end }}
+  {{- end }}
+  {{ range .Module.RequiredInputs }}
+  {{- if and $.Module.RequiredInputs $.Module.OptionalInputs }}
+  ##### `{{ .Name }}`
+  {{- else }}
+  #### `{{ .Name }}`
+  {{- end }}
+
+  {{ .Description }}
+  <div style="display:inline-block;width:100%;">
+  <div style="float:left;border-color:#FFFFFF;width:75%;">
+  <details><summary>Type</summary>
+
+  ```hcl
+  {{ .Type }}
+  ```
+
+  </details>
+  </div>
+  </div>
+  {{ end }}
+  {{- if and .Module.RequiredInputs (not .Module.OptionalInputs) }}
+  <!-- markdownlint-restore -->
+  {{- end }}
+  {{- if and .Module.RequiredInputs .Module.OptionalInputs }}
+  #### Optional Inputs
+  {{- else if .Module.OptionalInputs }}
+  <!-- markdownlint-disable -->
+  ### Optional Inputs
+  {{- end }}
+  {{- if .Module.OptionalInputs }}
+  {{ range .Module.OptionalInputs }}
+  * [{{ .Name }}](#{{ .Name }})
+  {{- end }}
+  {{- end }}
+  {{ range .Module.OptionalInputs }}
+  {{- if and $.Module.RequiredInputs $.Module.OptionalInputs }}
+
+  ##### `{{ .Name }}`
+  {{- else }}
+
+  #### `{{ .Name }}`
+  {{- end }}
+
+  {{ .Description }}
+  <details style="width: 100%;display: inline-block">
+    <summary>Type & Default</summary>
+    <div style="height: 1em"></div>
+    <div style="width:64%; float:left;">
+    <p style="border-bottom: 1px solid #333333;">Type</p>
+
+    ```hcl
+    {{ .Type }}
+    ```
+
+    </div>
+    <div style="width:34%;float:right;">
+    <p style="border-bottom: 1px solid #333333;">Default</p>
+
+    ```hcl
+  {{- if eq (print .Default) "&{}" }}
+    null
+  {{- else if eq (print .Default) "map[]" }}
+    {}
+  {{- else if eq (print .Default) "" }}
+    ""
+  {{- else }}
+    {{ .Default }}
+  {{- end }}
+    ```
+
+    </div>
+  </details>
+  {{- end }}
+  {{- if or .Module.RequiredInputs .Module.OptionalInputs }}
+  <!-- markdownlint-restore -->
+  {{- end }}
+  {{- if .Module.HasOutputs }}
+
+  ### Outputs
+  {{ range .Module.Outputs }}
+  * `{{ .Name }}`:
+    {{- print .Description | nindent 2 }}
+  {{- end }}
+  {{- end }}
+
+  </details>
+
+output:
+  file: "README.md"
+  mode: inject
+  template: |-
+    <!-- BEGIN TF-DOCS -->
+    {{ .Content }}
+
+    <!-- END TF-DOCS -->
+
+output-values:
+  enabled: false
+
+sort:
+  enabled: false
+
+# BEGIN DOTGIT-SYNC BLOCK EXCLUDED TF_DOCS_RECURSIVE
+recursive:
+  enabled: false
+# END DOTGIT-SYNC BLOCK EXCLUDED TF_DOCS_RECURSIVE
+
+settings:
+  color: true
+  default: true
+  description: true
+  escape: true
+  hide-empty: true
+  indent: 2
+  lockfile: true
+  read-comments: true
+  required: true
+  sensitive: true
+  type: true
+# END DOTGIT-SYNC BLOCK MANAGED

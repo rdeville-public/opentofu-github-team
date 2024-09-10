@@ -1,0 +1,73 @@
+---
+# DotGit Sync Configuration
+# ------------------------------------------------------------------------------
+dotgit:
+  source:
+    git:
+      url: https://framagit.org/rdeville-public/programs/dotgit-sync-templates
+      ref: main
+  yaml:
+    merge: only
+    only:
+      - .pre-commit-config.yaml
+      - gitlab-ci.yaml
+
+# Repos description and template usage configuration
+# ------------------------------------------------------------------------------
+name: OpenTofu Module Github Teams
+slug: module-github-teams
+description: |-
+  OpenTofu modules allowing to manage github repository configuration.
+licenses:
+  date:
+    first_year: "2024"
+  copyright:
+    owner: &fullname Romain Deville
+    email: &email code@romaindeville.fr
+  primary: MIT
+  secondaries:
+    - BEERWARE
+maintainers:
+  - name: *fullname
+    mail: *email
+gitignore:
+  templates:
+    - base
+  query:
+    - terraform
+statics:
+  - base
+  - base-ci-gitlab
+  - base-pre-commit
+  - commitlint-pre-commit
+  - markdown
+  - markdown-pre-commit
+  - markdown-ci-gitlab
+  - opentofu
+  - opentofu-pre-commit
+  - opentofu-ci-gitlab
+templates:
+  - base
+
+# Everything below is only used as variables in templates
+# ------------------------------------------------------------------------------
+code_of_conduct:
+  abuse: abuse+code@romaindeville.fr
+extra:
+  maintainers:
+    Romain Deville:
+      socials:
+        Website:
+          alt: &website https://romaindeville.fr
+          url: *website
+        Github:
+          alt: "@rdeville"
+          url: https://github.com/rdeville
+        Gitlab:
+          alt: "@r.deville"
+          url: https://gitlab.com/r.deville
+        Framagit:
+          alt: "@rdeville"
+          url: https://framagit.org/rdeville
+  repo:
+    url: https://framagit.org/rdeville-public/terraform/module-github-groups

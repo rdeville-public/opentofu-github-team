@@ -1,0 +1,33 @@
+{#- BEGIN DOTGIT-SYNC BLOCK MANAGED -#}
+{%- macro compute_authors(context, authors) %}
+{%- for version, release in context.history.released.items() %}
+  {%- for _, commits in release["elements"] | dictsort %}
+    {%- for commit in commits %}
+    {%- set author = {
+        "name": commit.commit.author.name,
+        "email": commit.commit.author.email
+      }
+    %}
+      {%- if author not in authors %}
+        {{- authors.append(author) }}
+      {%- endif %}
+    {%- endfor %}
+  {%- endfor %}
+{%- endfor %}
+{%- endmacro %}
+
+{%- macro print_author(authors) %}
+{%- for author in authors %}
+  * {{ author.name }} <{{ author.email }}>
+{%- endfor %}
+{%- endmacro %}
+
+{%- macro print_authors(context) %}
+{%- set ns = namespace(
+    authors=[]
+  )
+%}
+{{- compute_authors(context, ns.authors) }}
+{{- print_author(ns.authors) }}
+{%- endmacro %}
+{#- END DOTGIT-SYNC BLOCK MANAGED -#}

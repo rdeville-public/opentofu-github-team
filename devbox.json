@@ -1,0 +1,14 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetpack-io/devbox/main/.schema/devbox.schema.json",
+  "packages": {
+    "pre-commit": "3.7.1",
+    "yq-go": "4.44.1",
+    "opentofu": "1.8.1",
+    "terraform-docs": "0.18.0"
+  },
+  "shell": {
+    "init_hook": [
+      "./devbox/init_hook/pre-commit.sh"
+    ]
+  }
+}

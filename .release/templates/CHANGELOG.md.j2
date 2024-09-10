@@ -1,0 +1,27 @@
+{#- BEGIN DOTGIT-SYNC BLOCK MANAGED -#}
+<!-- markdownlint-disable-file -->
+# CHANGELOG
+{%- set ns = namespace(
+  content={
+    "major" : {"title": "💥", "commits": []},
+    "minor": {"title": "✨", "commits": []},
+    "patch": {"title": "🩹", "commits": []},
+    "others": {"title": "🔊", "commits": []}
+  })
+%}
+{% import ".changelog.macros.j2" as fn with context %}
+
+{%- if context.history.unreleased | length > 0 -%}
+{{- fn.recompute_commit(context.history.unreleased) | replace("None","") }}
+{#- UNRELEASED #}
+## Unreleased
+{{- fn.print_release() }}
+{% endif %}
+{#- RELEASED #}
+{%- for version, release in context.history.released.items() %}
+{{- fn.reset_namespace() }}
+{{- fn.recompute_commit(release["elements"]) | replace("None","") }}
+## {{ version.as_tag() }} ({{ release.tagged_date.strftime("%Y-%m-%d") }})
+{{- fn.print_release() }}
+{% endfor %}
+{#- END DOTGIT-SYNC BLOCK MANAGED -#}

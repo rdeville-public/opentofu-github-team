@@ -1,0 +1,35 @@
+# BEGIN DOTGIT-SYNC BLOCK MANAGED YAML_MERGED
+Lint All Commit Since Default Branch:
+  image: alpine:latest
+  stage: pre-ci
+  before_script:
+  - apk add --update --no-cache git nodejs npm
+  - npm install @commitlint/cli gitmojis
+  script:
+  - git fetch --all
+  - git checkout "${CI_DEFAULT_BRANCH}"
+  - git switch "${CI_MERGE_REQUEST_SOURCE_BRANCH_NAME:-$CI_COMMIT_BRANCH}"
+  - npx commitlint --from "${CI_DEFAULT_BRANCH}" --to "${CI_COMMIT_BRANCH}"
+  rules:
+  - if: $CI_PIPELINE_SOURCE =~ /(parent_pipeline|pipeline)/
+    when: never
+  - when: always
+Lint MR Title and Desc:
+  image: alpine:latest
+  stage: pre-ci
+  variables:
+    CI_MERGE_REQUEST_COMMIT: |-
+      ${CI_MERGE_REQUEST_TITLE}
+
+      ${CI_MERGE_REQUEST_DESCRIPTION}
+  before_script:
+  - apk add --update --no-cache git nodejs npm
+  - npm install @commitlint/cli gitmojis
+  script:
+  - echo -e "${CI_MERGE_REQUEST_COMMIT}" | npx commitlint
+  rules:
+  - if: $CI_PIPELINE_SOURCE =~ /(parent_pipeline|pipeline)/
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    when: always
+# END DOTGIT-SYNC BLOCK MANAGED YAML_MERGED

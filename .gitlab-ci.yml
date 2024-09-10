@@ -1,0 +1,59 @@
+# BEGIN DOTGIT-SYNC BLOCK MANAGED
+---
+# GLOBAL CONFIGURATION
+# =============================================================================
+# Define base workflow
+# https://docs.gitlab.com/ee/ci/yaml/README.html#workflow
+workflow:
+  rules:
+      # Allow pipelines from specific source source on main branch
+    - if: $CI_PIPELINE_SOURCE =~ /(parent_pipeline|pipeline|push|web|webide|schedule)/ && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      # Do not run CI when commit title have following chars anywhere
+      # WIP, NO-CI or 🚧 (gitmoji for "work in progress", aka :construction:)
+    - if: $CI_COMMIT_MESSAGE =~ /(wip|WIP|NO-CI|🚧|:construction:)/
+      when: never
+    - if: $CI_MERGE_REQUEST_TITLE =~ /^(D|d)raft:/
+      when: never
+      # Allow pipelines from MR request to default branch
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == $CI_DEFAULT_BRANCH
+      # Allow pipelines from specific source source on main branch
+    - when: never
+
+variables:
+  # Set CI Feature Flag
+  FF_SCRIPT_SECTIONS: true
+
+stages:
+  - pre-ci
+  - pre-lint
+  - lint
+  - post-lint
+  - pre-build
+  - build
+  - post-build
+  - pretest
+  - test
+  - post-test
+  - pre-release
+  - release
+  - post-release
+  - pre-deploy
+  - deploy
+  - post-deploy
+  - post-ci
+
+# Fake jobs that simply exit 0 to enable CI
+"Dumb Job - Exit 0":
+  image: alpine:latest
+  stage: pre-ci
+  script:
+    - exit 0
+  rules:
+    - when: always
+
+include:
+  - .gitlab/*.yml
+  - .gitlab/*.yaml
+  - .gitlab/*/*.yml
+  - .gitlab/*/*.yaml
+# END DOTGIT-SYNC BLOCK MANAGED

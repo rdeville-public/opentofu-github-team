@@ -1,0 +1,14 @@
+# BEGIN DOTGIT-SYNC BLOCK MANAGED YAML_MERGED
+Lint Markdown:
+  image: alpine:latest
+  stage: lint
+  before_script:
+  - apk add --update --no-cache git nodejs npm
+  - npm install markdownlint-cli
+  script:
+  - npx markdownlint-cli ./
+  rules:
+  - if: $CI_PIPELINE_SOURCE =~ /(parent_pipeline|pipeline)/
+    when: never
+  - when: always
+# END DOTGIT-SYNC BLOCK MANAGED YAML_MERGED
