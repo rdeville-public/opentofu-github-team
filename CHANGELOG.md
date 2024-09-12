@@ -1,6 +1,13 @@
 <!-- markdownlint-disable-file -->
 # CHANGELOG
 
+## v0.2.3 (2024-09-12)
+
+### 🩹 Patch
+
+  * ✏️ Fix files name for variables and outputs (!5) by Romain Deville ([`a48d6c7`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/a48d6c7c9b84955b17730c1798d90bb0b6f21d04))
+  * ✏️ Fix files name for variables and outputs by Romain Deville ([`5c91e06`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/5c91e06b80d67f7b15bedd24c7216c42eaea1671)) 🔏
+
 ## v0.2.2 (2024-09-10)
 
 ### 🩹 Patch
@@ -11,6 +18,7 @@
 ### 🔊 Others
 
   * 📝 Update README after dotgit sync update by Romain Deville ([`be69aed`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/be69aed9e303b8fd08888e33b5f3b964a43ffa13)) 🔏
+  * 🔖 v0.2.2 (NO-CI) by Python Semantic Release [bot] ([`ec4fcff`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/ec4fcff90ece073299d307c3e4e6a59e219c28d9))
 
 ## v0.2.1 (2024-09-10)
 
@@ -54,8 +62,6 @@
 
   * 🎉 Initialization of the repos from DGS and add provider constraint (!1) by Romain Deville ([`d57892f`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/d57892fc51a79e557874ea4933dd5a429028b371))
   * 👷 Add Gitlab CI from DGS template by Romain Deville ([`630d41a`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/630d41ac729c9c752caab69f7f18684e26095c1b)) 🔏
-  * 📝 Add CODE_OF_CONDUCT from DGS by Romain Deville ([`2ab7b34`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/2ab7b34ae52579afa72e5c99653879ba7776704e)) 🔏
-  * 📝 Update README from DGS by Romain Deville ([`7843977`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/7843977b16bcb80adbee9bf6b630c4458d316c2c)) 🔏
   * 🔖 v0.1.0 (NO-CI) by Python Semantic Release [bot] ([`afd831e`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/afd831ed741935ca85424436a7b9164120575a8e))
   * 🔨 Add devbox config from DGS template by Romain Deville ([`624e12b`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/624e12b603d1acc1b8551d89c12368283708f4a3)) 🔏
   * 🔨 Add pre-commit configuration from DGS template by Romain Deville ([`905826b`](https://framagit.org/rdeville-public/terraform/module-github-teams/-/commit/905826bc44d59be20032dd180a0f05f26f698f5e)) 🔏
