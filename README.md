@@ -5,7 +5,7 @@
 
 > ⚠️ IMPORTANT !
 >
-> Main repo is on [framagit.org](https://framagit.org/rdeville-public/terraform/module-github-teams).
+> Main repo is on [framagit.org](https://framagit.org/rdeville-public/opentofu/github-teams).
 >
 > On other online git platforms, they are just mirror of the main repo.
 >
@@ -25,12 +25,12 @@
 
 </center>
 
-[build_badge]: https://framagit.org/rdeville-public/terraform/module-github-teams/badges/main/pipeline.svg
-[build_badge_url]: https://framagit.org/rdeville-public/terraform/module-github-teams/-/commits/main
-[release_badge]: https://framagit.org/rdeville-public/terraform/module-github-teams/-/badges/release.svg
-[release_badge_url]: https://framagit.org/rdeville-public/terraform/module-github-teams/-/releases/
+[build_badge]: https://framagit.org/rdeville-public/opentofu/github-teams/badges/main/pipeline.svg
+[build_badge_url]: https://framagit.org/rdeville-public/opentofu/github-teams/-/commits/main
+[release_badge]: https://framagit.org/rdeville-public/opentofu/github-teams/-/badges/release.svg
+[release_badge_url]: https://framagit.org/rdeville-public/opentofu/github-teams/-/releases/
 [license_badge]: https://img.shields.io/badge/Licenses-MIT%20OR%20BEERWARE-blue
-[license_url]: https://framagit.org/rdeville-public/terraform/module-github-teams/blob/main/LICENSE
+[license_url]: https://framagit.org/rdeville-public/opentofu/github-teams/blob/main/LICENSE
 [changelog_badge]: https://img.shields.io/badge/Changelog-Python%20Semantic%20Release-yellow
 [changelog_badge_url]: https://github.com/python-semantic-release/python-semantic-release
 
@@ -149,16 +149,16 @@ module "team" {
 
 * [opentofu](https://opentofu.org/docs/):
   `>= 1.8, < 2.0`
-* [github](https://registry.terraform.io/providers/integrations/github/):
+* [github](https://registry.terraform.io/providers/opentofu/github/):
   `~>6.2`
 
 ### Resources
 
-* [resource.github_team.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team)
+* [resource.github_team.this](https://registry.terraform.io/providers/opentofu/github/latest/docs/resources/team)
   > Manage a single team
-* [resource.github_team_members.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_members)
+* [resource.github_team_members.this](https://registry.terraform.io/providers/opentofu/github/latest/docs/resources/team_members)
   > Manage members and maintainers of the team
-* [resource.github_team_settings.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_settings)
+* [resource.github_team_settings.this](https://registry.terraform.io/providers/opentofu/github/latest/docs/resources/team_settings)
   > Manage review_delegation of the team
 
 <!-- markdownlint-capture -->
@@ -435,8 +435,8 @@ Feel free to check [issues page][issues_pages].
 
 You can also take a look at the [CONTRIBUTING.md][contributing].
 
-[issues_pages]: https://framagit.org/rdeville-public/terraform/module-github-teams/-/issues
-[contributing]: https://framagit.org/rdeville-public/terraform/module-github-teams/blob/main/CONTRIBUTING.md
+[issues_pages]: https://framagit.org/rdeville-public/opentofu/github-teams/-/issues
+[contributing]: https://framagit.org/rdeville-public/opentofu/github-teams/blob/main/CONTRIBUTING.md
 
 ## 👤 Maintainers
 
@@ -455,6 +455,6 @@ This project is under following licenses (**OR**) :
 * [MIT][main_license]
 * [BEERWARE][beerware_license]
 
-[main_license]: https://framagit.org/rdeville-public/terraform/module-github-teams/blob/main/LICENSE
-[beerware_license]: https://framagit.org/rdeville-public/terraform/module-github-teams/blob/main/LICENSE.BEERWARE
+[main_license]: https://framagit.org/rdeville-public/opentofu/github-teams/blob/main/LICENSE
+[beerware_license]: https://framagit.org/rdeville-public/opentofu/github-teams/blob/main/LICENSE.BEERWARE
 <!-- END DOTGIT-SYNC BLOCK MANAGED -->

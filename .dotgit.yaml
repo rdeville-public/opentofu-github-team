@@ -15,7 +15,7 @@ dotgit:
 # Repos description and template usage configuration
 # ------------------------------------------------------------------------------
 name: OpenTofu Module Github Teams
-slug: module-github-teams
+slug: github-teams
 description: |-
   OpenTofu modules allowing to manage github repository configuration.
 licenses:
@@ -70,4 +70,4 @@ extra:
           alt: "@rdeville"
           url: https://framagit.org/rdeville
   repo:
-    url: https://framagit.org/rdeville-public/terraform/module-github-teams
+    url: https://framagit.org/rdeville-public/opentofu/github-teams
