@@ -1,16 +1,22 @@
 ---
 # DotGit Sync Configuration
 # ------------------------------------------------------------------------------
+version: v1alpha1
 dotgit:
   source:
     git:
       url: https://framagit.org/rdeville-public/programs/dotgit-sync-templates
       ref: main
   yaml:
-    merge: only
-    only:
-      - .pre-commit-config.yaml
-      - gitlab-ci.yaml
+    merge:
+      method: only
+      only:
+        - .pre-commit-config.yaml
+        - gitlab-ci.yaml
+    enforce:
+      method: only
+      only:
+        - gitlab-ci.yaml
 
 # Repos description and template usage configuration
 # ------------------------------------------------------------------------------
@@ -22,20 +28,18 @@ licenses:
   date:
     first_year: "2024"
   copyright:
-    owner: &fullname Romain Deville
-    email: &email code@romaindeville.fr
+    Romain Deville: code@romaindeville.fr
   primary: MIT
   secondaries:
     - BEERWARE
 maintainers:
-  - name: *fullname
-    mail: *email
+  Romain Deville: code@romaindeville.fr
 gitignore:
   templates:
     - base
   query:
     - terraform
-statics:
+templates:
   - base
   - base-ci-gitlab
   - base-pre-commit
@@ -46,14 +50,12 @@ statics:
   - opentofu
   - opentofu-pre-commit
   - opentofu-ci-gitlab
-templates:
-  - base
 
 # Everything below is only used as variables in templates
 # ------------------------------------------------------------------------------
-code_of_conduct:
-  abuse: abuse+code@romaindeville.fr
 extra:
+  code_of_conduct:
+    abuse: abuse+code@romaindeville.fr
   maintainers:
     Romain Deville:
       socials:

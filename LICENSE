@@ -1,7 +1,8 @@
 # BEGIN DOTGIT-SYNC BLOCK MANAGED
 OpenTofu Module Github Teams - OpenTofu modules allowing to manage github repository configuration.
 
-Copyright © 2024 Romain Deville
+Copyright © 2024 - 2025
+Romain Deville
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the "Software"),

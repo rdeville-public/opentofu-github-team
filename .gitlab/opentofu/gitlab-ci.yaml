@@ -1,4 +1,4 @@
-# BEGIN DOTGIT-SYNC BLOCK MANAGED YAML_MERGED
+# BEGIN DOTGIT-SYNC BLOCK MANAGED YAML_MERGED_ENFORCED
 OpenTofu Validate:
   image: alpine:latest
   stage: lint
@@ -39,4 +39,4 @@ OpenTofu Documentation:
   - if: $CI_PIPELINE_SOURCE =~ /(parent_pipeline|pipeline)/
     when: never
   - when: always
-# END DOTGIT-SYNC BLOCK MANAGED YAML_MERGED
+# END DOTGIT-SYNC BLOCK MANAGED YAML_MERGED_ENFORCED
