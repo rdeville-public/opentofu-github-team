@@ -150,16 +150,16 @@ module "team" {
 
 * [opentofu](https://opentofu.org/docs/):
   `>= 1.8, < 2.0`
-* [github](https://registry.terraform.io/providers/opentofu/github/):
+* [github](https://search.opentofu.org/provider/integrations/github/):
   `~>6.2`
 
 ### Resources
 
-* [resource.github_team.this](https://registry.terraform.io/providers/opentofu/github/latest/docs/resources/team)
+* [resource.github_team.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team)
   > Manage a single team
-* [resource.github_team_members.this](https://registry.terraform.io/providers/opentofu/github/latest/docs/resources/team_members)
+* [resource.github_team_members.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_members)
   > Manage members and maintainers of the team
-* [resource.github_team_settings.this](https://registry.terraform.io/providers/opentofu/github/latest/docs/resources/team_settings)
+* [resource.github_team_settings.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_settings)
   > Manage review_delegation of the team
 
 <!-- markdownlint-capture -->
