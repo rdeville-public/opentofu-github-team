@@ -59,7 +59,7 @@ content: |-
   {{- $providerSource = .ProviderSource }}
   {{- end }}
   {{- end }}
-  * [{{ .Name }}](https://registry.terraform.io/providers/{{ $providerSource }}/):
+  * [{{ .Name }}](https://search.opentofu.org/provider/{{ $providerSource }}/):
   {{- end }}
     `{{ .Version }}`
   {{- end }}
@@ -108,7 +108,7 @@ content: |-
   {{- if regexMatch "^[a-zA-Z0-9_-.]+.[a-z]" .Source }}
   {{- $source = print "https://" .Source }}
   {{- else }}
-  {{- $source = print "https://registry.terraform.io/modules/" .Source }}
+  {{- $source = print "https://search.opentofu.org/module/" .Source }}
   {{- end }}
   {{- else }}
   {{- if regexMatch ".*@.*/" .Source }}

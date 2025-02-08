@@ -1,4 +1,4 @@
-# BEGIN DOTGIT-SYNC BLOCK MANAGED YAML_MERGED
+# BEGIN DOTGIT-SYNC BLOCK MANAGED YAML_MERGED_ENFORCED
 Generate Changelog:
   image: alpine:latest
   stage: pre-release
@@ -29,6 +29,7 @@ Tag and Release:
   script:
   - git fetch
   - git switch "${CI_DEFAULT_BRANCH}"
+  - git pull
   - git remote set-url origin "https://gitlab-ci-token:${DOTGIT_SYNC_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}"
   - semantic-release -c releaserc.toml version
   rules:
@@ -36,4 +37,4 @@ Tag and Release:
     when: never
   - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   - when: never
-# END DOTGIT-SYNC BLOCK MANAGED YAML_MERGED
+# END DOTGIT-SYNC BLOCK MANAGED YAML_MERGED_ENFORCED
