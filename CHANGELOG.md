@@ -1,6 +1,18 @@
 <!-- markdownlint-disable-file -->
 # CHANGELOG
 
+## v0.2.5 (2025-02-08)
+
+### 🩹 Patch
+
+  * ➕ Update provider from opentofu/github to integrations/github (!8) by Romain Deville ([`de0fb42`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/de0fb42e30a3a9a8825de72e740a3a36125b506a))
+  * ➕ Update provider from opentofu/github to integrations/github by Romain Deville ([`0d0751e`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/0d0751e6b368407b47234079f16823ae7d08c8c8)) 🔏
+  * ⬆️ Update dotgit files from DGS Templates by Romain Deville ([`d7401ff`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/d7401ffa112edde55a24ca10aee9030a959226f2)) 🔏
+
+### 🔊 Others
+
+  * 📝 Update README from tf-docs by Romain Deville ([`f8acfd2`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/f8acfd2ed3d7f4aa8c22814ae3a2b88ac6a39dc1)) 🔏
+
 ## v0.2.4 (2025-01-03)
 
 ### 🩹 Patch
@@ -20,10 +32,6 @@
   * ✏️ Fix files name for variables and outputs (!5) by Romain Deville ([`a48d6c7`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/a48d6c7c9b84955b17730c1798d90bb0b6f21d04))
   * ✏️ Fix files name for variables and outputs by Romain Deville ([`5c91e06`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/5c91e06b80d67f7b15bedd24c7216c42eaea1671)) 🔏
 
-### 🔊 Others
-
-  * 🔖 v0.2.3 (NO-CI) by Python Semantic Release [bot] ([`6302b0d`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/6302b0dc3cfeeb4b859c42177ea48674268835dd))
-
 ## v0.2.2 (2024-09-10)
 
 ### 🩹 Patch
@@ -34,7 +42,6 @@
 ### 🔊 Others
 
   * 📝 Update README after dotgit sync update by Romain Deville ([`be69aed`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/be69aed9e303b8fd08888e33b5f3b964a43ffa13)) 🔏
-  * 🔖 v0.2.2 (NO-CI) by Python Semantic Release [bot] ([`ec4fcff`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/ec4fcff90ece073299d307c3e4e6a59e219c28d9))
 
 ## v0.2.1 (2024-09-10)
 
@@ -42,10 +49,6 @@
 
   * ⚡️ Ensuire team are either members xor maintainers (!3) by Romain Deville ([`ef385f2`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/ef385f23e80e723ef633f08dd785419ae577186d))
   * ⚡️ Ensuire team are either members xor maintainers by Romain Deville ([`52fcdcd`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/52fcdcd4f66fa5ae9fb7b0c29efcdf2f1026f179)) 🔏
-
-### 🔊 Others
-
-  * 🔖 v0.2.1 (NO-CI) by Python Semantic Release [bot] ([`2ff54ad`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/2ff54ada102e50547daad3cf72aff52e4b1a3bd1))
 
 ## v0.2.0 (2024-09-10)
 
@@ -57,7 +60,6 @@
 ### 🔊 Others
 
   * 📝 Update README from tf-docs and examples by Romain Deville ([`66f2852`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/66f285262ecc3a1a86b73e03a2ba585cfaa2e1f0))
-  * 🔖 v0.2.0 (NO-CI) by Python Semantic Release [bot] ([`8fe4c3f`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/8fe4c3f2fee103255171dff3339815e73361b03f))
 
 ## v0.1.0 (2024-09-10)
 
@@ -82,7 +84,6 @@
   * 📄 Update licenses from DGS by Romain Deville ([`0fcfa4a`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/0fcfa4a507dcb37f05caa59271e8e5eb2943d081)) 🔏
   * 📝 Add CODE_OF_CONDUCT from DGS by Romain Deville ([`2ab7b34`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/2ab7b34ae52579afa72e5c99653879ba7776704e)) 🔏
   * 📝 Update README from DGS by Romain Deville ([`7843977`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/7843977b16bcb80adbee9bf6b630c4458d316c2c)) 🔏
-  * 🔖 v0.1.0 (NO-CI) by Python Semantic Release [bot] ([`afd831e`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/afd831ed741935ca85424436a7b9164120575a8e))
   * 🔨 Add devbox config from DGS template by Romain Deville ([`624e12b`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/624e12b603d1acc1b8551d89c12368283708f4a3)) 🔏
   * 🔨 Add pre-commit configuration from DGS template by Romain Deville ([`905826b`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/905826bc44d59be20032dd180a0f05f26f698f5e)) 🔏
   * 🙈 Update gitignore from DGS by Romain Deville ([`1178370`](https://framagit.org/rdeville-public/opentofu/github-team/-/commit/1178370246f197b13ba41289cc108ef8dfb20bf9)) 🔏
